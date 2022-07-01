@@ -10,9 +10,12 @@
 </head>
 <body>
 
-<div class="container m-5">
-    <form action="{{url('/postData')}}" autocomplete="off" method="post">
+<div class="container mt-3">
+    <form action="{{url('/users/1')}}" autocomplete="off" method="post">
+
         @csrf
+        @method('DELETE')
+
         <div class="form-group">
             <label for="first_name">Primeiro Nome</label>
             <input type="text" name="first_name" id="first_name" class="form-control" value="Elimar">

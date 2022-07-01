@@ -37,3 +37,13 @@ Route::get('/users/1',[\App\Http\Controllers\UserController::class,'index']);
 Route::get('/getData',[\App\Http\Controllers\UserController::class,'getData']);
 
 Route::post('/postData',[\App\Http\Controllers\UserController::class,'postData']);
+
+Route::put('/users/1', [\App\Http\Controllers\UserController::class,'testPut']);
+Route::patch('/users/1', [\App\Http\Controllers\UserController::class,'testPath']);
+
+
+Route::match(['put','patch'],'/users/2', [\App\Http\Controllers\UserController::class,'testPathPut']);
+
+Route::delete('/users/1',['App\Http\Controllers\UserController','destroy']);
+
+
