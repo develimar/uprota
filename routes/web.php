@@ -16,3 +16,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('/form', 'form');
+
+/*
+ * Route::verbo-http('URI','Controller@metodo - [COntroller, metodo]')
+ *
+ * passo a passo
+ * Definimos a rota - criamos o nosso controlador - criação do metodo - interação com a view
+ *
+ *  Route::get($uri, $callback);
+    Route::post($uri, $callback);
+    Route::put($uri, $callback);
+    Route::patch($uri, $callback);
+    Route::delete($uri, $callback);
+    Route::options($uri, $callback);
+ */
+
+Route::get('/users/1',[\App\Http\Controllers\UserController::class,'index']);
+Route::get('/getData',[\App\Http\Controllers\UserController::class,'getData']);
+
+Route::post('/postData',[\App\Http\Controllers\UserController::class,'postData']);
